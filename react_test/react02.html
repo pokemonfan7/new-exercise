@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+</head>
+<body>
+<script type="text/babel">
+    let names=['Alex','Mike','Nana'];
+    ReactDOM.render(
+        <h1>{names.map(function (name) {
+            return <h1>Hello,{name}!</h1>
+        })
+    }
+        </h1>,
+        document.body);
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+	  <script>
+			var addEvent=function(e,type,handle,capture){
+			    if(e.addEventListener){
+			        e.addEventListener(type,handle,capture);
+			    }
+			    else if(e.attachEvent){
+			        e.attachEvent("on"+type,handle);
+			    }
+			    else{
+			        e["on"+type]=handle;
+			    }
+			}
+	  </script>
+  </head>
+  <body>
+
+  </body>
+</html>

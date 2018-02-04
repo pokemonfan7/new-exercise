@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script>
+        var times=0;
+        var bubbleSort=function(arr){
+            for(var i=0;i<arr.length-1;i++){
+                for(var j=i+1;j<arr.length;j++){
+                    if(arr[i]>arr[j]){//如果前面的数据比后面的大就交换
+                        var temp=arr[i];
+                        arr[i]=arr[j];
+                        arr[j]=temp;
+                    }
+                    console.log("第"+(++times)+"次排序后："+arr);
+                }
+            }
+            return arr;
+        };
+        console.log("The result is:"+bubbleSort([123,412,35,345,45,7,7,8,67,456,3,46,34,5]));
+
+
+
+        //			var bubbleSort=function(arr){
+        //			    var i,j,temp;
+        //			    for(i=0;i<arr.length-1;i++){
+        //			        for(j=i+1;j<arr.length;j++){
+        //			            if(arr[i]>arr[j]){
+        //			                temp=arr[i];
+        //			                arr[i]=arr[j];
+        //			                arr[j]=temp;
+        //			            }
+        //			        }
+        //			    }
+        //			    console.log(arr);
+        //			};
+        //			bubbleSort([123,345,4,67,345,567,6723,457,75,43,65,42,5,3443,3,5,4,2,4,6,4,57,22,6743,4,5]);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

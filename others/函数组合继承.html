@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+	  <script>
+			var Super=function(name) {
+			    this.name=name;
+			};
+			Super.prototype.fn1=function(){
+			    console.log("HAHA");
+			};
+			var Sub=function(name,age) {
+			    Super.call(this,name);
+			    this.age=age;
+			};
+			Sub.prototype=new Super();
+	  </script>
+  </head>
+  <body>
+
+  </body>
+</html>

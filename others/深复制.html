@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+	  <script>
+			var clone=function(v){
+				var o=v.constuctor===Array?[]:{};
+				for(var i in v){
+					o[i]=typeof v[i]===Object?clone(v[i]):v[i];
+				}
+				return o;
+			};
+			 var china = {
+			nation : '中国',
+			birthplaces:['北京','上海','广州'],
+			skincolr :'yellow',
+			friends:['sk','ls']
+			}
+			console.log(clone(china));
+	  </script>
+  </head>
+  <body>
+
+  </body>
+</html>

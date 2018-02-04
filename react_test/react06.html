@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>组合组件</title>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    function Welcome(props){
+        return <h1>Hello {props.name}</h1>;
+    }
+
+    function App(){
+        return (
+          <div>
+              <Welcome name="Alex" />
+              <Welcome name="snorlax" />
+              <Welcome name="NANA"/>
+          </div>
+        );
+    }
+
+    ReactDOM.render(
+        <App />,
+        document.getElementById('root')
+    );
+</script>
+</body>
+</html>

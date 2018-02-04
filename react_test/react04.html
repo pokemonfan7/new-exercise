@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+</head>
+<body>
+<script type="text/babel">
+    function HelloMessage(props){
+        return <h1>Hello {props.name}</h1>;
+    }
+    const element=<HelloMessage name="John" />;
+    ReactDOM.render(
+        element,
+        document.body
+    );
+</script>
+</body>
+</html>
