@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="../../js/react.development.js"></script>
+    <script src="../../js/react-dom.development.js"></script>
+    <script src="../../js/babel.min.js"></script>
+</head>
+<style>
+	body {
+		padding: 5px
+	}
+</style>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+class MyComponent extends React.Component{
+  constructor(props){
+	super(props);
+	this.handleClick=this.handleClick.bind(this);
+  }
+  handleClick() {
+    this.myTextInput.focus();
+  }
+  render() {
+    return (
+      <div>
+        <input type="text" ref={(input) => { this.myTextInput = input; }} />
+        <input type="button" value="Focus the text input" onClick={this.handleClick} />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <MyComponent />,
+  document.getElementById('root')
+);
+/*
+上面代码中，组件 MyComponent 的子节点有一个文本输入框，用于获取用户的输入。
+这时就必须获取真实的 DOM 节点，虚拟 DOM 是拿不到用户输入的。为了做到这一点，
+文本输入框必须有一个 ref 属性，然后 this.myTextInput 就会返回这个真实的 DOM 节点。
+通过这个ref我们同样可以获取input的输入值。就是这么简单。
+但是使用过程中我们切记：由于 this.myTextInput 属性获取的是真实 DOM ，所
+以必须等到虚拟 DOM 插入文档以后，才能使用这个属性，否则会报错。上面代码中，
+通过为组件指定 Click 事件的回调函数，确保了只有等到真实 DOM 发生 Click 事件
+之后，才会读取 this.myTextInput 属性。
+
+*/
+</script>
+</body>
+</html>
