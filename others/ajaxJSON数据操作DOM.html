@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="root">
+
+</ul>
+<script>
+var root=document.getElementById('root');
+var asd=new XMLHttpRequest();
+asd.open('get','https://5a7bfd3b4c1e2d00124a5d8e.mockapi.io/api/v1/records',true);
+asd.onreadystatechange=function(){
+	if(asd.readyState==4&&asd.status==200){
+		var res=asd.responseText;
+		console.log(res);
+		var resarr=JSON.parse(res);
+		console.log(resarr);
+resarr.map(function(v){
+	var oLi=document.createElement('li');
+	var oLitext=document.createTextNode('今天是个好日子'+v.date);
+	oLi.appendChild(oLitext);
+	root.appendChild(oLi);
+});
+	}
+}
+asd.send();
+
+
+
+</script>
+</body>
+</html>
